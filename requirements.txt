@@ -1,0 +1,5 @@
+mxnet-cu90mkl==0.12.1
+opencv-python
+numpy
+nltk
+tqdm
