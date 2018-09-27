@@ -1,18 +1,4 @@
-data/cifar10/*.idx
-data/cifar10/*.rec
-data/cifar10/*.lst
-data/cifar10/cifar-10-batches-py
-
-data/cifar100/*.idx
-data/cifar100/*.rec
-data/cifar100/*.lst
-data/cifar100/cifar-100-python
-
-data/tinyimagenet200/*.idx
-data/tinyimagenet200/*.rec
-data/tinyimagenet200/*.lst
-data/tinyimagenet200/train
-data/tinyimagenet200/val
-data/tinyimagenet200/test
+data/
+model/
 
 *.pyc
