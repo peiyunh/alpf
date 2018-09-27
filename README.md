@@ -50,7 +50,7 @@ data
 ## Questions construction 
 We need to convert a set of class labels into a set of binary questions based on how class labels can be grouped together. Please refer to `questions.py` for how binary questions are constructed for cifar10, cifar100, and tinyimagenet200 based on wordnet. 
 
-## Experiment 
+## Training
 The code is written in a way that it can be configured for many variants of our model. However, the number of parameters and the effort of configuring can look daunting. To help with this, we include a script that shows how configuration is done for all variants of our model. Please refer to ```script/experiment/train_all_variants.py```. 
 
 ```
