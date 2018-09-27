@@ -1,4 +1,3 @@
-#!/home/peiyunh/anaconda2/bin/python2
 from __future__ import print_function
 import itertools
 import subprocess
@@ -21,9 +20,9 @@ if len(cml_args.gpus) == 0:
 dataset = cml_args.dataset
 gpus = itertools.cycle(cml_args.gpus)
 
-# NOTE: these seeds are randomly generated 
-# we keep a copy them for reproducibility 
-# 
+# NOTE: these seeds are randomly generated
+# we keep a copy them for reproducibility
+#
 # eventually, we average over runs with different seeds
 seeds = [12489, 50162, 5283, 56281, 63314]
 npseeds = [23285, 356, 21365, 12957, 5683]
@@ -145,7 +144,7 @@ for feedback_type in ['full', 'partial']:
             print(exe + ' ' + script + ' ' + args)
 
             args = args.split()
-            if not cml_args.dryrun: 
+            if not cml_args.dryrun:
                 processes.append(subprocess.Popen([exe, script] + args))
             pid += 1
 
