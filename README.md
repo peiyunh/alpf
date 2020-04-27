@@ -71,7 +71,7 @@ optional arguments:
 I was using MXNet 0.12.1 when developing this code base. In later versions (e.g. the latest 1.3.0), there is a bug from mxnet/image/image.py that I am not sure how to fix. Until I found a way around, MXNet 0.12.1 is recommended. 
 
 ### How about MXNet 1.5.1? 
-Thanks to Abhay Mittal @ UMass, there are a few things to fix: 
+Please refer to [this pull request](https://github.com/peiyunh/alpf/pull/1/commits/5034db67aa98c8a322d8987d2ba203cef603996c) created by Abhay Mittal(@abhaymittal). Here is a short description: 
 > 1. The division train_size / 10 on [this line](https://github.com/peiyunh/alpf/blob/master/iters.py#L85) needs to be casted to int otherwise MxNet throws an error.
 > 2. In the MXNet code, I had to make a change in the [next_sample](https://github.com/apache/incubator-mxnet/blob/master/python/mxnet/image/image.py#L1460) method to use len(self.seq) instead of self.num_image
 > 3. Finally, in the last batch, MxNet was adding padding by using images in the beginning of the dataset.  Therefore the value of self.cur was resetting and go backwards ([code](https://github.com/peiyunh/alpf/blob/master/iters.py#L54))( For e.g. if initially the cur was at 12200 and the whole seq length was 12300 with batch size of 200, the cursor would reset to 100 by taking 100 images from the beginning of the dataset. I solved this by storing the initial value of the cursor and then just taking the images from that point.
